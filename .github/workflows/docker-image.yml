@@ -28,10 +28,12 @@ jobs:
       run: echo '${{ secrets.COMPOSER_AUTH_JSON }}' > $GITHUB_WORKSPACE/.composer/auth.json
 
     - name: Install Magento2
-      run: ./build.sh
+      run: ./build.sh 
       
     - name: Remove auth.json file
       run: rm -f $GITHUB_WORKSPACE/.composer/auth.json
+    - name: Remove auth.json file
+      run: ls
       
     - name: Set up QEMU
       uses: docker/setup-qemu-action@v2
